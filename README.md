@@ -1,6 +1,6 @@
 # Serial Port Library
 
-Library was created to write and read bytes by Serial Port. Windows only.
+Library was created to transmit and receive bytes by Serial Port. Windows only.
 
 ## Requirements
 
