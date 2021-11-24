@@ -1,0 +1,17 @@
+# Config file for the SerialPort package
+# It defines the following variables
+#  SerialPort_INCLUDE_DIRS - include directories for SerialPort
+#  SerialPort_LIBRARIES    - libraries to link against
+#  SerialPort_EXECUTABLE   - the tests executable
+
+# Compute paths
+get_filename_component(SERIALPORT_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(SerialPort_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET SerialPortLib AND NOT SerialPort_BINARY_DIR)
+    include("${SERIALPORT_CMAKE_DIR}/SerialPortTargets.cmake")
+endif()
+
+# These are IMPORTED targets created by SerialPortTargets.cmake
+set(SerialPort_LIBRARIES SerialPortLib)
